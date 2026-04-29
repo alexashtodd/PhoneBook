@@ -41,6 +41,12 @@ public class phone extends JPanel {
         returnToMenu.addActionListener(e -> {
             mainMenu();
         });
+        addContact.addActionListener(e -> {
+            addContact();
+        });
+        close.addActionListener(e -> {
+            System.exit(0);
+        });
 
         frame.setVisible(true);
         setFocusable(true);
@@ -56,6 +62,8 @@ public class phone extends JPanel {
         revalidate();
         repaint();
     }
+
+
     private void showContacts() {
         removeAll();
         add(returnToMenu);
@@ -69,7 +77,7 @@ public class phone extends JPanel {
         add(submitSearch);
         String list = "";
         for(Contact s : c.getAllContacts()) {
-            message +=s.toString();
+            message += s.toString();
         }
         revalidate();
         repaint();

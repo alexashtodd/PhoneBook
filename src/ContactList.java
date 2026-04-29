@@ -15,8 +15,16 @@ public class ContactList {
     public void setAllContacts(ArrayList<Contact> contacts) {
         this.contacts = contacts;
     }
-    public void addContact(Contact contact){
+    public String addContact(Contact contact) {
+        for (Contact c : contacts) {
+            if (c.getName()[0].equals(contact.getName()[0]) &&
+                    c.getName()[1].equals(contact.getName()[1])) {
+                return "Contact already exists.";
+            }
+        }
+
         contacts.add(contact);
+        return "Contact added successfully.";
     }
     public void addContact(int index, Contact contact){
         contacts.add(index, contact);

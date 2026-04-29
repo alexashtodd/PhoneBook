@@ -32,7 +32,6 @@ public class phone extends JPanel {
         submitSearch.addActionListener(e -> {
             String input = text.getText();
             String ct = "";
-
             c.searchByName(input);
         });
         contactList.addActionListener(e -> {

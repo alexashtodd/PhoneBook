@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// Comment
 public class ContactList {
     ArrayList<Contact> contacts;
 

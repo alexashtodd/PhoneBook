@@ -78,6 +78,10 @@ public class phone extends JPanel {
         message = c.toString();
         revalidate();
         repaint();
+
+        c.addContact(new Contact());
+
+
     }
 
     ///////////////////////////

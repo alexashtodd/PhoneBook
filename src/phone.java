@@ -66,7 +66,7 @@ public class phone extends JPanel {
     private void showContacts() {
         removeAll();
         add(returnToMenu);
-        //message = c.getContactList();
+        message = c.toString();
         revalidate();
         repaint();
     }
@@ -75,9 +75,7 @@ public class phone extends JPanel {
         add(text);
         add(submitSearch);
         String list = "";
-        for(Contact s : c.getAllContacts()) {
-            message += s.toString();
-        }
+        message = c.toString();
         revalidate();
         repaint();
     }

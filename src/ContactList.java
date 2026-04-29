@@ -6,6 +6,13 @@ public class ContactList {
     public ContactList() {
         contacts = new ArrayList<>();
     }
+    public String toString(){
+        String str = "";
+        for(Contact c : contacts){
+            str += c.toString() + "\n";
+        }
+        return str;
+    }
     public ContactList(ArrayList<Contact> contacts) {
         this.contacts = contacts;
     }

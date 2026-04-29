@@ -13,8 +13,9 @@ public class phone extends JPanel {
     private JButton addContact = new JButton("Add Contact");
     private JButton close = new JButton("Exit App");
     private JButton returnToMenu = new JButton("Return to Main Menu");
-    private JTextField text = new JTextField();
-    private JButton submitSearch = new JButton("Submit");
+    private JTextField text = new JTextField(20);
+    private JTextField text2 = new JTextField(20);
+    private JButton submit = new JButton("Submit");
 
     ///////////////////////////
     ///    CONSTRUCTORS     ///
@@ -29,10 +30,12 @@ public class phone extends JPanel {
         setLayout(new FlowLayout(FlowLayout.CENTER, 210, 20));
         frame.add(this);
 
-        submitSearch.addActionListener(e -> {
-            String input = text.getText();
-            String ct = "";
-            c.searchByName(input);
+        submit.addActionListener(e -> {
+            String[] name = text.getText().split("");
+            String number = text2.getText();
+            int num = Integer.parseInt(number);
+            c.addContact(new Contact(name, num));
+
         });
         contactList.addActionListener(e -> {
             showContacts();
@@ -72,16 +75,13 @@ public class phone extends JPanel {
     }
     private void addContact() {
         removeAll();
-        add(text);
-        add(submitSearch);
+        add(text); //name
+        add(text2); //number
+        add(submit);
         String list = "";
         message = c.toString();
         revalidate();
         repaint();
-
-        c.addContact(new Contact());
-
-
     }
 
     ///////////////////////////
